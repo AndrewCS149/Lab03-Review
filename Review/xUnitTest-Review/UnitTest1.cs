@@ -13,6 +13,7 @@ namespace xUnitTest_Review
         [InlineData("3 10 10 33", 300)]
         [InlineData("10 4", 0)]
         [InlineData("-10 10 1", -100)]
+        [InlineData("20 2 Dogs", 40)]
         public void CanReturnProperProduct(string input, int product)
         {
             // arrange & act
@@ -21,5 +22,7 @@ namespace xUnitTest_Review
             // assert
             Assert.Equal(product, result);
         } 
+
+        // Test Challenge 2: GetAvg()
     }
 }
