@@ -6,19 +6,20 @@ namespace xUnitTest_Review
 {
     public class UnitTest1
     {
-        // TEST GetProduct()
+        // Test Challenge 1: GetProduct()
 
-        [Fact]
-        public void CanReturn0()
+        [Theory]
+        [InlineData("5 5 5", 125)]
+        [InlineData("3 10 10 33", 300)]
+        [InlineData("10 4", 0)]
+        [InlineData("-10 10 1", -100)]
+        public void CanReturnProperProduct(string input, int product)
         {
-            // arrange 
-            string input = "0";
-
-            // act 
-            int output = GetProduct(input);
+            // arrange & act
+            int result = GetProduct(input);
 
             // assert
-            Assert.Equal(0, output);
-        }
+            Assert.Equal(product, result);
+        } 
     }
 }

@@ -7,7 +7,7 @@ namespace Review
         static void Main(string[] args)
         {
 
-            // Challenge 1: GetProduct
+            // Challenge 1: GetProduct()
             Console.Write("Please enter 3 numbers sepearted by a space: ");
             string input1 = Console.ReadLine();
             Console.WriteLine(GetProduct(input1));
