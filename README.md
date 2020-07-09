@@ -24,3 +24,7 @@ week 1, of the 401 ASP.NET Core course.
 	* GetAvgSetup() method added
 	* GetAvg() method added
 	* PrintDiamond() method added
+	* MaxDupe() method added
+	* MaxNum() method added
+	* CharCount() method added
+	* SaveToFile() method added

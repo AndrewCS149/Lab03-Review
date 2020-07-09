@@ -33,9 +33,12 @@ namespace Review
             //int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
             //MaxNum(nums2);
 
-            // Challenge 6: SaveWordToFile()
-            string path = "../../../../../SaveWordToFile.txt";
-            SaveWordToFile(path);
+            // Challenge 6: SaveToFile()
+            string path = "../../../../../SaveToFile.txt";
+            SaveToFile(path);
+
+            // Challenge 7: ReadFromFile()
+            ReadFromFile(path);
 
             // Challenge 9: CharCount()
             //string word = "This is a sentance about important things";
@@ -192,12 +195,28 @@ namespace Review
         /// Saves user input to an external file in the root of the directory
         /// </summary>
         /// <param name="path"></param>
-        static void SaveWordToFile(string path)
+        static void SaveToFile(string path)
         {
             Console.Write("Please enter a word to have saved to a file: ");
             string word = Console.ReadLine();
 
             File.WriteAllText(path, word);
+        }
+
+        /// <summary>
+        /// Prints the given path's file content to the console
+        /// </summary>
+        /// <param name="path">Path to file</param>
+        static void ReadFromFile(string path)
+        {
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s = "";
+                while((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
         }
 
         /// <summary>
