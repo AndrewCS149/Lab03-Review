@@ -28,9 +28,13 @@ namespace Review
             //int[] nums = new int[]{1,1,2,2,2,2,2,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1};
             //MaxDupe(nums);
 
-            // Challenge 5: 
-            int[] nums = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
-            MaxNum(nums);
+            // Challenge 5: MaxNum()
+            //int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+            //MaxNum(nums2);
+
+            // Challenge 9: CharCount()
+            //string word = "This is a sentance about important things";
+            //CharCount(word);
         }
 
         /// <summary>
@@ -177,6 +181,28 @@ namespace Review
             }
             Console.WriteLine(maxNum);
             return maxNum;
+        }
+
+        /// <summary>
+        /// Given a string, returns an array with each words character count
+        /// </summary>
+        /// <param name="str">String</param>
+        /// <returns>String array</returns>
+        public static string[] CharCount(string str)
+        {
+            string[] splitStr = str.Split(' ');
+            string[] wordCount = new string[splitStr.Length];
+
+            for (int i = 0; i < splitStr.Length; i++)
+            {
+                int length = splitStr[i].Length;
+                wordCount[i] = $"{splitStr[i]}: {length}";
+            }
+            foreach (string word in wordCount)
+            {
+                Console.WriteLine(word);
+            }
+            return wordCount;
         }
     }
 }

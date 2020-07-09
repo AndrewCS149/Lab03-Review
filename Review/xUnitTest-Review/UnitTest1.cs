@@ -66,5 +66,20 @@ namespace xUnitTest_Review
             // assert
             Assert.Equal(maxNumber, result);
         }
+
+        // Test Challenge 9: CharCount()
+        [Theory]
+        [InlineData("This is a sentance about important things", new string[] { "This: 4", "is: 2", "a: 1", 
+            "sentance: 8", "about: 5", "important: 9", "things: 6" })]
+        [InlineData("Hello World!!!", new string[] { "Hello: 5", "World!!!: 8" })]
+        [InlineData("%%% &&&& !@#$", new string[] { "%%%: 3", "&&&&: 4", "!@#$: 4" })]
+        public void CanReturnProperCharCount(string word, string[] wordCount)
+        {
+            // arrange & act
+            string[] result = CharCount(word);
+
+            // assert
+            Assert.Equal(wordCount, result);
+        }
     }
 }
