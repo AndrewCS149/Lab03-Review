@@ -25,9 +25,12 @@ namespace Review
             //PrintDiamond(rows);
 
             // Challenge 4: MaxDupe()
-            int[] nums = new int[]{1,1,2,2,2,2,2,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1};
-            MaxDupe(nums);
+            //int[] nums = new int[]{1,1,2,2,2,2,2,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1};
+            //MaxDupe(nums);
 
+            // Challenge 5: 
+            int[] nums = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+            MaxNum(nums);
         }
 
         /// <summary>
@@ -157,6 +160,23 @@ namespace Review
             }
             Console.WriteLine(num);
             return num;
+        }
+
+        /// <summary>
+        /// Returns the max value in an array
+        /// </summary>
+        /// <param name="nums">Array of ints</param>
+        /// <returns>Max value in array</returns>
+        public static int MaxNum(int[] nums)
+        {
+            int maxNum = nums[0];
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] > maxNum)
+                    maxNum = nums[i];
+            }
+            Console.WriteLine(maxNum);
+            return maxNum;
         }
     }
 }

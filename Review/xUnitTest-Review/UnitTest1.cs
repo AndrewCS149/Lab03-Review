@@ -20,7 +20,7 @@ namespace xUnitTest_Review
 
             // assert
             Assert.Equal(product, result);
-        } 
+        }
 
         // Test Challenge 2: GetAvg()
         [Theory]
@@ -41,7 +41,7 @@ namespace xUnitTest_Review
         [Theory]
         [InlineData(new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 }, 1)]
         [InlineData(new int[] { 44, 3, 0, 0, 0, 44, 44, 44 }, 44)]
-        [InlineData(new int[] { 5, 5, 5, 5, 5, 5, 5}, 5)]
+        [InlineData(new int[] { 5, 5, 5, 5, 5, 5, 5 }, 5)]
         [InlineData(new int[] { 1, 2, 3, 5, 6, 7, 8, 9 }, 1)]
         [InlineData(new int[] { 1, 1, 3, 3, 3, 2, 2, 2 }, 3)]
         public void CanReturnProperMaxDupe(int[] numbers, int maxDupe)
@@ -51,6 +51,20 @@ namespace xUnitTest_Review
 
             // assert
             Assert.Equal(maxDupe, result);
+        }
+
+        // Test Challenge 5: MaxNum()
+        [Theory]
+        [InlineData(new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 }, 555)]
+        [InlineData(new int[] { 50, 100, -20}, 100)]
+        [InlineData(new int[] { 40, 40, 40, 40 }, 40)]
+        public void CanReturnProperMaxNumber(int[] numbers, int maxNumber)
+        {
+            // arrange & act
+            int result = MaxNum(numbers);
+
+            // assert
+            Assert.Equal(maxNumber, result);
         }
     }
 }
