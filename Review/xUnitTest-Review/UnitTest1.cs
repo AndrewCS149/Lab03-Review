@@ -7,7 +7,6 @@ namespace xUnitTest_Review
     public class UnitTest1
     {
         // Test Challenge 1: GetProduct()
-
         [Theory]
         [InlineData("5 5 5", 125)]
         [InlineData("3 10 10 33", 300)]
@@ -24,5 +23,18 @@ namespace xUnitTest_Review
         } 
 
         // Test Challenge 2: GetAvg()
+        [Theory]
+        [InlineData(new double[] { 5, 20, 33, 50, 20 }, 25.6)]
+        [InlineData(new double[] { 100, 55, 769, 5 }, 232.25)]
+        [InlineData(new double[] { 10, 22, 44, 33, 20 }, 25.8)]
+        [InlineData(new double[] { 0, 0, 0, 0 }, 0)]
+        public void CanReturnProperAverage(double[] numbers, double average)
+        {
+            // arrange & act
+            double result = GetAvg(numbers);
+
+            // assert
+            Assert.Equal(average, result);
+        }
     }
 }

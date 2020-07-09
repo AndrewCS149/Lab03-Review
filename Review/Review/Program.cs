@@ -14,7 +14,7 @@ namespace Review
             GetProduct(input1);
 
             // Challenge 2: GetAvg()
-            int[] getAvgData = GetAvgSetup();
+            double[] getAvgData = GetAvgSetup();
             GetAvg(getAvgData);
         }
 
@@ -50,39 +50,44 @@ namespace Review
         /// Gets the user input to be used for challenge 2
         /// </summary>
         /// <returns>The integer array to be used for challenge 2</returns>
-        public static int[] GetAvgSetup()
+        public static double[] GetAvgSetup()
         {
             Console.Write("Please enter a number between 2-10: ");
             string input = Console.ReadLine();
             int toNum = Convert.ToInt32(input);
 
-            int[] numArr = new int[toNum];
+            double[] numArr = new double[toNum];
             for (int i = 1; i <= toNum; i++)
             {
                 Console.Write($"{i} of {toNum} - Enter a number: ");
                 string inputNum = Console.ReadLine();
 
-                while (!(int.TryParse(inputNum, out int returnVal)) ||
-                        int.Parse(inputNum) < 0)
+                while (!(double.TryParse(inputNum, out double returnVal)) ||
+                        double.Parse(inputNum) < 0)
                 {
                     Console.WriteLine("Please enter a number positive, real number.");
                     Console.Write($"{i} of {toNum} - Enter a number: ");
                     inputNum = Console.ReadLine();
                 }
-                numArr[i - 1] = int.Parse(inputNum);
+                numArr[i - 1] = double.Parse(inputNum);
             }
             return numArr;
         }
 
-        public static int GetAvg(int[] nums)
+        /// <summary>
+        /// Returns the avg of the passed in array
+        /// </summary>
+        /// <param name="nums">Int array</param>
+        /// <returns>The avg of the array</returns>
+        public static double GetAvg(double[] nums)
         {
-            int sum = 0;
-            foreach (int num in nums)
+            double sum = 0;
+            foreach (double num in nums)
             {
                 sum += num;
             }
 
-            int avg = sum / nums.Length;
+            double avg = sum / nums.Length;
             Console.WriteLine($"Average: {avg}");
             return avg;
         }
