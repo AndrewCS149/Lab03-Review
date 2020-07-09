@@ -23,3 +23,4 @@ week 1, of the 401 ASP.NET Core course.
 	* GetProduct() method added
 	* GetAvgSetup() method added
 	* GetAvg() method added
+	* PrintDiamond() method added

@@ -19,10 +19,14 @@ namespace Review
             //GetAvg(getAvgData);
 
             // Challenge 3: PrintDiamond()
-            Console.Write("Please enter the amount of rows you would like\n" +
-                          "the diamond to be (enter odd number for symetrical purposes): ");
-            int rows = int.Parse(Console.ReadLine());
-            PrintDiamond(rows);
+            //Console.Write("Please enter the amount of rows you would like\n" +
+            //              "the diamond to be (enter odd number for symetrical purposes): ");
+            //int rows = int.Parse(Console.ReadLine());
+            //PrintDiamond(rows);
+
+            // Challenge 4: MaxDupe()
+            int[] nums = new int[]{1,1,2,2,2,2,2,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1};
+            MaxDupe(nums);
 
         }
 
@@ -126,6 +130,33 @@ namespace Review
                     Console.WriteLine(diamond);
                 }
             }
+        }
+
+        /// <summary>
+        /// Given an array of ints, return the number that appears the most
+        /// </summary>
+        /// <param name="nums">Array of ints</param>
+        /// <returns>Number that appears the most</returns>
+        public static int MaxDupe(int[] nums)
+        {
+            int max = 0;
+            int num = nums[0];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int counter = 1;
+                for (int j = i + 1; j < nums.Length; j++)
+                {
+                    if (nums[i] == nums[j])
+                        counter++;
+                }
+                if (counter > max)
+                {
+                    num = nums[i];
+                    max = counter;
+                }
+            }
+            Console.WriteLine(num);
+            return num;
         }
     }
 }

@@ -36,5 +36,21 @@ namespace xUnitTest_Review
             // assert
             Assert.Equal(average, result);
         }
+
+        // Test Challenge 4: MaxDupe()
+        [Theory]
+        [InlineData(new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 }, 1)]
+        [InlineData(new int[] { 44, 3, 0, 0, 0, 44, 44, 44 }, 44)]
+        [InlineData(new int[] { 5, 5, 5, 5, 5, 5, 5}, 5)]
+        [InlineData(new int[] { 1, 2, 3, 5, 6, 7, 8, 9 }, 1)]
+        [InlineData(new int[] { 1, 1, 3, 3, 3, 2, 2, 2 }, 3)]
+        public void CanReturnProperMaxDupe(int[] numbers, int maxDupe)
+        {
+            // arrange & act
+            int result = MaxDupe(numbers);
+
+            // assert
+            Assert.Equal(maxDupe, result);
+        }
     }
 }
