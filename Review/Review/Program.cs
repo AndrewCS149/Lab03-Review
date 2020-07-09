@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Globalization;
+using System.IO;
 
 namespace Review
 {
@@ -31,6 +32,10 @@ namespace Review
             // Challenge 5: MaxNum()
             //int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
             //MaxNum(nums2);
+
+            // Challenge 6: SaveWordToFile()
+            string path = "../../../../../SaveWordToFile.txt";
+            SaveWordToFile(path);
 
             // Challenge 9: CharCount()
             //string word = "This is a sentance about important things";
@@ -181,6 +186,18 @@ namespace Review
             }
             Console.WriteLine(maxNum);
             return maxNum;
+        }
+
+        /// <summary>
+        /// Saves user input to an external file in the root of the directory
+        /// </summary>
+        /// <param name="path"></param>
+        static void SaveWordToFile(string path)
+        {
+            Console.Write("Please enter a word to have saved to a file: ");
+            string word = Console.ReadLine();
+
+            File.WriteAllText(path, word);
         }
 
         /// <summary>
