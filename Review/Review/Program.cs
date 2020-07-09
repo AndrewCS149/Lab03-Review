@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Review
 {
@@ -39,6 +40,9 @@ namespace Review
 
             // Challenge 7: ReadFromFile()
             ReadFromFile(path);
+
+            // Challenge 8: RewriteWord()
+            RewriteWord(path);
 
             // Challenge 9: CharCount()
             //string word = "This is a sentance about important things";
@@ -209,14 +213,45 @@ namespace Review
         /// <param name="path">Path to file</param>
         static void ReadFromFile(string path)
         {
-            using (StreamReader sr = File.OpenText(path))
+            try
             {
-                string s = "";
-                while((s = sr.ReadLine()) != null)
+                using (StreamReader sr = File.OpenText(path))
                 {
-                    Console.WriteLine(s);
+                    try
+                    {
+                        string s = "";
+                        while ((s = sr.ReadLine()) != null)
+                        {
+                            Console.WriteLine(s);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                    finally
+                    {
+                        sr.Close();
+                    }
                 }
             }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Removes first word from a file and rewrites the rest back to it
+        /// </summary>
+        /// <param name="path">The file to rewrite to</param>
+        static void RewriteWord(string path)
+        {
+            string text = File.ReadAllText(path);
+            string[] splitText = text.Split(' ');
+            text = text.Substring(splitText[0].Length + 1);
+
+            File.WriteAllText(path, text);
         }
 
         /// <summary>
