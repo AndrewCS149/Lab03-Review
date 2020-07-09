@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
+using System.Globalization;
 
 namespace Review
 {
@@ -9,13 +10,20 @@ namespace Review
         {
 
             // Challenge 1: GetProduct()
-            Console.Write("Please enter 3 numbers sepearted by a space: ");
-            string input1 = Console.ReadLine();
-            GetProduct(input1);
+            //Console.Write("Please enter 3 numbers sepearted by a space: ");
+            //string input1 = Console.ReadLine();
+            //GetProduct(input1);
 
             // Challenge 2: GetAvg()
-            double[] getAvgData = GetAvgSetup();
-            GetAvg(getAvgData);
+            //double[] getAvgData = GetAvgSetup();
+            //GetAvg(getAvgData);
+
+            // Challenge 3: PrintDiamond()
+            Console.Write("Please enter the amount of rows you would like\n" +
+                          "the diamond to be (enter odd number for symetrical purposes): ");
+            int rows = int.Parse(Console.ReadLine());
+            PrintDiamond(rows);
+
         }
 
         /// <summary>
@@ -90,6 +98,34 @@ namespace Review
             double avg = sum / nums.Length;
             Console.WriteLine($"Average: {avg}");
             return avg;
+        }
+
+        /// <summary>
+        /// Prints a diamond shape to the console
+        /// </summary>
+        /// <param name="rows">How many rows the diamond will have</param>
+        static void PrintDiamond(int rows)
+        {
+            string diamond = "*";
+            int mid = rows / 2;
+            diamond = diamond.PadLeft(mid + 1);
+            for (int i = 0; i < rows; i++)
+            {
+                if (i < mid)
+                {
+                    Console.WriteLine(diamond);
+                    diamond = diamond.Substring(1);
+                    diamond += "**";
+                }
+                else if (i == mid)
+                    Console.WriteLine(diamond);
+                else
+                {
+                    diamond = diamond.Substring(0, diamond.Length - 2);
+                    diamond = " " + diamond;
+                    Console.WriteLine(diamond);
+                }
+            }
         }
     }
 }
