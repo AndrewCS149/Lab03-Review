@@ -15,6 +15,37 @@ week 1, of the 401 ASP.NET Core course.
 
 ---
 
+## Getting Started
+---
+
+Clone down repo:
+`$ git clone [https://github.com/AndrewCS149/Lab03-Review.git]`
+
+
+Once in root directory navigate to:
+`cd .\Review\Review\bin\debug\netcoreapp3.1`
+
+Then run:
+`start .\Review.exe`
+
+---
+
+## Visuals
+---
+
+Visuals for the challenges that require user input:
+
+GetProduct()
+![GetProduct method](Review/assets/demoImgs/GetProduct.jpg)
+
+GetAvg()
+![GetAvg method](Review/assets/demoImgs/GetAvg.jpg)
+
+PrintDiamond()
+![PrintDiamond method](Review/assets/demoImgs/PrintDiamond.jpg)
+
+---
+
 ## Change Log
 ---
 
@@ -28,3 +59,5 @@ week 1, of the 401 ASP.NET Core course.
 	* MaxNum() method added
 	* CharCount() method added
 	* SaveToFile() method added
+	* ReadFromFile() method added
+	* RewriteWord() method added
