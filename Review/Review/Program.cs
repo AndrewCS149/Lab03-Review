@@ -36,11 +36,11 @@ namespace Review
                 //MaxNum(nums2);
 
                 //// Challenge 6: SaveToFile()
-                string path = "../../../../../SaveToFile.txt";
-                SaveToFile(path);
+                string path = "../../../../../words.txt";
+                //SaveToFile(path);
 
                 //// Challenge 7: ReadFromFile()
-                //ReadFromFile(path);
+                ReadFromFile(path);
 
                 //// Challenge 8: RewriteWord()
                 //RewriteWord(path);
@@ -227,12 +227,11 @@ namespace Review
         /// <summary>
         /// Saves user input to an external file in the root of the directory
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="path">Path to file</param>
         static void SaveToFile(string path)
         {
             Console.Write("Please enter a word to have saved to a file: ");
             string word = Console.ReadLine();
-
             File.AppendAllText(path, $"\n{word}");
         }
 
