@@ -33,6 +33,10 @@ Then run:
 ## Visuals
 ---
 
+WhiteBoard - Challenge 3:
+
+![whiteboard](Review/assets/lab03-whiteboard.jpg)
+
 Visuals for the challenges that require user input:
 
 GetProduct()
