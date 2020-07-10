@@ -13,13 +13,13 @@ namespace Review
             try
             {
                 //// Challenge 1: GetProduct()
-                //Console.Write("Please enter 3 numbers sepearted by a space: ");
-                //string input1 = Console.ReadLine();
-                //GetProduct(input1);
+                Console.Write("Please enter 3 numbers sepearted by a space: ");
+                string input1 = Console.ReadLine();
+                GetProduct(input1);
 
                 // Challenge 2: GetAvg()
-                double[] getAvgData = GetAvgSetup();
-                GetAvg(getAvgData);
+                //double[] getAvgData = GetAvgSetup();
+                //GetAvg(getAvgData);
 
                 //// Challenge 3: PrintDiamond()
                 //Console.Write("Please enter the amount of rows you would like\n" +
@@ -76,7 +76,10 @@ namespace Review
             string[] strArr = input.Split(' ');
 
             if (strArr.Length < 3)
+            {
+                Console.WriteLine(0);
                 return 0;
+            }
 
             int product = 1;
             for (int i = 0; i < 3; i++)
@@ -104,18 +107,11 @@ namespace Review
             bool success = Int32.TryParse(input, out int number);
 
             // while user inputs a non integer type
-            while (!success)
+            while (!success || int.Parse(input) < 2 || int.Parse(input) > 10)
             {
                 Console.Write("Invalid Input: Please enter a number between 2-10: ");
                 input = Console.ReadLine();
                 success = Int32.TryParse(input, out number);
-            }
-
-            // ensure user inputs valid number
-            while (int.Parse(input) < 2 || int.Parse(input) > 10)
-            {
-                Console.Write("Invalid Input: Please enter a number between 2-10: ");
-                input = Console.ReadLine();
             }
 
             int toNum = Convert.ToInt32(input);
