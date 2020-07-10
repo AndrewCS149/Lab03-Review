@@ -10,44 +10,59 @@ namespace Review
     {
         static void Main(string[] args)
         {
+            try
+            {
+                //// Challenge 1: GetProduct()
+                //Console.Write("Please enter 3 numbers sepearted by a space: ");
+                //string input1 = Console.ReadLine();
+                //GetProduct(input1);
 
-            // Challenge 1: GetProduct()
-            Console.Write("Please enter 3 numbers sepearted by a space: ");
-            string input1 = Console.ReadLine();
-            GetProduct(input1);
+                // Challenge 2: GetAvg()
+                double[] getAvgData = GetAvgSetup();
+                GetAvg(getAvgData);
 
-            // Challenge 2: GetAvg()
-            double[] getAvgData = GetAvgSetup();
-            GetAvg(getAvgData);
+                //// Challenge 3: PrintDiamond()
+                //Console.Write("Please enter the amount of rows you would like\n" +
+                //              "the diamond to be (enter odd number for symetrical purposes): ");
+                //int rows = int.Parse(Console.ReadLine());
+                //PrintDiamond(rows);
 
-            // Challenge 3: PrintDiamond()
-            Console.Write("Please enter the amount of rows you would like\n" +
-                          "the diamond to be (enter odd number for symetrical purposes): ");
-            int rows = int.Parse(Console.ReadLine());
-            PrintDiamond(rows);
+                //// Challenge 4: MaxDupe()
+                //int[] nums = new int[] { 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
+                //MaxDupe(nums);
 
-            // Challenge 4: MaxDupe()
-            int[] nums = new int[] { 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
-            MaxDupe(nums);
+                //// Challenge 5: MaxNum()
+                //int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+                //MaxNum(nums2);
 
-            // Challenge 5: MaxNum()
-            int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
-            MaxNum(nums2);
+                //// Challenge 6: SaveToFile()
+                //string path = "../../../../../SaveToFile.txt";
+                //SaveToFile(path);
 
-            // Challenge 6: SaveToFile()
-            string path = "../../../../../SaveToFile.txt";
-            SaveToFile(path);
+                //// Challenge 7: ReadFromFile()
+                //ReadFromFile(path);
 
-            // Challenge 7: ReadFromFile()
-            ReadFromFile(path);
+                //// Challenge 8: RewriteWord()
+                //RewriteWord(path);
 
-            // Challenge 8: RewriteWord()
-            RewriteWord(path);
+                //// Challenge 9: CharCount()
+                //string word = "This is a sentance about important things";
+                //CharCount(word);
+                //Console.ReadLine();
 
-            // Challenge 9: CharCount()
-            string word = "This is a sentance about important things";
-            CharCount(word);
-            Console.ReadLine();
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine($"Uh oh! {e}");
+            } 
+            catch (OverflowException e)
+            {
+                Console.WriteLine($"Uh oh! {e}");
+            }
+            catch (Exception e )
+            { 
+                Console.WriteLine($"Uh oh! {e}");
+            }
         }
 
         /// <summary>
@@ -86,6 +101,23 @@ namespace Review
         {
             Console.Write("Please enter a number between 2-10: ");
             string input = Console.ReadLine();
+            bool success = Int32.TryParse(input, out int number);
+
+            // while user inputs a non integer type
+            while (!success)
+            {
+                Console.Write("Invalid Input: Please enter a number between 2-10: ");
+                input = Console.ReadLine();
+                success = Int32.TryParse(input, out number);
+            }
+
+            // ensure user inputs valid number
+            while (int.Parse(input) < 2 || int.Parse(input) > 10)
+            {
+                Console.Write("Invalid Input: Please enter a number between 2-10: ");
+                input = Console.ReadLine();
+            }
+
             int toNum = Convert.ToInt32(input);
 
             double[] numArr = new double[toNum];
