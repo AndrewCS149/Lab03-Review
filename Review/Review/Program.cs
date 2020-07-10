@@ -13,9 +13,9 @@ namespace Review
             try
             {
                 //// Challenge 1: GetProduct()
-                Console.Write("Please enter 3 numbers sepearted by a space: ");
-                string input1 = Console.ReadLine();
-                GetProduct(input1);
+                //Console.Write("Please enter 3 numbers sepearted by a space: ");
+                //string input1 = Console.ReadLine();
+                //GetProduct(input1);
 
                 // Challenge 2: GetAvg()
                 //double[] getAvgData = GetAvgSetup();
@@ -36,8 +36,8 @@ namespace Review
                 //MaxNum(nums2);
 
                 //// Challenge 6: SaveToFile()
-                //string path = "../../../../../SaveToFile.txt";
-                //SaveToFile(path);
+                string path = "../../../../../SaveToFile.txt";
+                SaveToFile(path);
 
                 //// Challenge 7: ReadFromFile()
                 //ReadFromFile(path);
@@ -233,7 +233,7 @@ namespace Review
             Console.Write("Please enter a word to have saved to a file: ");
             string word = Console.ReadLine();
 
-            File.WriteAllText(path, word);
+            File.AppendAllText(path, $"\n{word}");
         }
 
         /// <summary>
