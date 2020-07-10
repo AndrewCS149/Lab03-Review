@@ -12,43 +12,44 @@ namespace Review
         {
             try
             {
-                //// Challenge 1: GetProduct()
-                //Console.Write("Please enter 3 numbers sepearted by a space: ");
-                //string input1 = Console.ReadLine();
-                //GetProduct(input1);
+                // Challenge 1: GetProduct()
+                Console.Write("Please enter 3 numbers sepearted by a space: ");
+                string input1 = Console.ReadLine();
+                GetProduct(input1);
 
-                // Challenge 2: GetAvg()
-                //double[] getAvgData = GetAvgSetup();
-                //GetAvg(getAvgData);
+                //Challenge 2: GetAvg()
+                double[] getAvgData = GetAvgSetup();
+                GetAvg(getAvgData);
 
-                //// Challenge 3: PrintDiamond()
-                //Console.Write("Please enter the amount of rows you would like\n" +
-                //              "the diamond to be (enter odd number for symetrical purposes): ");
-                //int rows = int.Parse(Console.ReadLine());
-                //PrintDiamond(rows);
+                // Challenge 3: PrintDiamond()
+                Console.Write("Please enter the amount of rows you would like\n" +
+                              "the diamond to be (enter odd number for symetrical purposes): ");
+                int rows = int.Parse(Console.ReadLine());
+                PrintDiamond(rows);
 
-                //// Challenge 4: MaxDupe()
-                //int[] nums = new int[] { 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
-                //MaxDupe(nums);
+                // Challenge 4: MaxDupe()
+                int[] nums = new int[] { 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
+                MaxDupe(nums);
 
-                //// Challenge 5: MaxNum()
-                //int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
-                //MaxNum(nums2);
+                // Challenge 5: MaxNum()
+                int[] nums2 = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+                MaxNum(nums2);
 
-                //// Challenge 6: SaveToFile()
+                // Challenge 6: SaveToFile()
                 string path = "../../../../../words.txt";
-                //SaveToFile(path);
+                SaveToFile(path);
 
-                //// Challenge 7: ReadFromFile()
+                // Challenge 7: ReadFromFile()
                 ReadFromFile(path);
 
-                //// Challenge 8: RewriteWord()
-                //RewriteWord(path);
+                // Challenge 8: RewriteWord()
+                RewriteWord(path);
 
-                //// Challenge 9: CharCount()
-                //string word = "This is a sentance about important things";
-                //CharCount(word);
-                //Console.ReadLine();
+                // Challenge 9: CharCount()
+                Console.WriteLine("Please enter a sentence:");
+                string word = Console.ReadLine();
+                CharCount(word);
+                Console.ReadLine();
 
             }
             catch (FormatException e)
