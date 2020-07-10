@@ -59,6 +59,10 @@ namespace Review
             {
                 Console.WriteLine($"Uh oh! {e}");
             }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine($"Uh oh! {e}");
+            }
             catch (Exception e )
             { 
                 Console.WriteLine($"Uh oh! {e}");
