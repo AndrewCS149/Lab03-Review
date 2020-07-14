@@ -46,7 +46,7 @@ GetAvg()
 ![GetAvg method](Review/assets/demoImgs/GetAvg.jpg)
 
 PrintDiamond()
-![PrintDiamond method](Review/assets/demoImgs/PrintDiamond.jpg)
+![PrintDiamond method](Review/assets/demoImgs/PrintDiamond-01.jpg)
 
 ---
 
